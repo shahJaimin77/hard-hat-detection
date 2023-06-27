@@ -11,7 +11,7 @@ import torch
 
 dir_name = os.path.abspath(os.path.dirname(__file__))
 location = os.path.join(dir_name, 'yolov5')
-
+location = r"{}".format(location)
 
 model = torch.hub.load(location, 'custom', path='best_hh.pt', source='local')
 # Image
