@@ -8,7 +8,7 @@ import torch
 # model = torch.hub.load('ultralytics/yolov5', 'custom',
 #                     path='best_hh.pt', force_reload=True)
 
-model = torch.hub.load('../yolov5', 'custom', path='best_hh.pt', source='local')
+model = torch.hub.load('./yolov5', 'custom', path='best_hh.pt', source='local')
 # Image
 
 def obj_detection(my_img):
