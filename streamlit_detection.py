@@ -9,11 +9,12 @@ import torch
 # model = torch.hub.load('ultralytics/yolov5', 'custom',
 #                     path='best_hh.pt', force_reload=True)
 
-dir_name = os.path.abspath(os.path.dirname(__file__))
-location = os.path.join(dir_name, 'yolov5')
-location = r"{}".format(location)
+from pathlib import Path
 
-model = torch.hub.load(location, 'custom', path='best_hh.pt', source='local')
+yolo_path = r"{}\yolov5".format(os.getcwd())
+print(yolo_path)
+
+model = torch.hub.load(yolo_path, 'custom', path='best_hh.pt', source='local')
 # Image
 
 def obj_detection(my_img):
