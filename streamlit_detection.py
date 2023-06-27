@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import cv2
 import numpy as np
@@ -8,7 +9,11 @@ import torch
 # model = torch.hub.load('ultralytics/yolov5', 'custom',
 #                     path='best_hh.pt', force_reload=True)
 
-model = torch.hub.load('./yolov5', 'custom', path='best_hh.pt', source='local')
+dir_name = os.path.abspath(os.path.dirname(__file__))
+location = os.path.join(dir_name, 'yolov5')
+
+
+model = torch.hub.load(location, 'custom', path='best_hh.pt', source='local')
 # Image
 
 def obj_detection(my_img):
