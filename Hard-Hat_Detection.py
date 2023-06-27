@@ -3,12 +3,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
-model = torch.hub.load('ultralytics/yolov5', 'custom',
-                       path='best_hh.pt', force_reload=True)
+# model = torch.hub.load('ultralytics/yolov5', 'custom',
+#                        path='best_hh.pt', force_reload=True)
 
+# model = torch.hub.load("ultralytics/yolov5", pretrained=True)
+model = torch.hub.load('../yolov5', 'custom', path='best_hh.pt', source='local')
+# ckpt = torch.load('best_hh.pt')
+# model.load_state_dict(ckpt['model'].state_dict())
+
+
+model.conf = 0.6
 
 # Open the video file
-cap = cv2.VideoCapture('D:/Sneha/Intership of Arunoday Tech/HardHat_Detection/testing/video4.mp4')
+cap = cv2.VideoCapture('rtsp://admin:admin@123@103.69.243.58:554/streaming/channels/202')
 
 # Check if the file was opened successfully
 if not cap.isOpened():
