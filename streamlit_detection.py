@@ -11,7 +11,7 @@ import torch
 
 from pathlib import Path
 
-yolo_path = r"{}\yolov5".format(os.getcwd())
+yolo_path = "{}/yolov5".format(os.getcwd())
 print(yolo_path)
 
 model = torch.hub.load(yolo_path, 'custom', path='best_hh.pt', source='local')
