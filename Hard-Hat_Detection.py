@@ -34,7 +34,7 @@ while cap.isOpened():
 
     results = model(frame)
 
-    cv2.imshow('Fire Detection', np.squeeze(results.render()))
+    cv2.imshow('HardHat Detection', np.squeeze(results.render()))
 
     # Wait for 25 milliseconds or until the user presses a key
     if cv2.waitKey(25) & 0xFF == ord('q'):
